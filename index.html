@@ -24,8 +24,8 @@
             <button onclick="addToDisplay('3')">3</button>
             <button onclick="addToDisplay('-')">-</button>
             <button onclick="addToDisplay('0')">0</button>
-<!--             <button onclick="addToDisplay('.')">.</button>
- -->            <button onclick="calculateResult()">=</button>
+            <!--             <button onclick="addToDisplay('.')">.</button>
+ --> <button onclick="calculateResult()">=</button>
             <button onclick="addToDisplay('+')">+</button>
             <button onclick="clearDisplay()">C</button>
         </div>
@@ -44,7 +44,7 @@
 
         .calculator {
             background-color: #fff;
-            border-radius: 10px;        
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             max-width: 300px;
@@ -85,66 +85,69 @@
 
 
 
- <script>
-    function addToDisplay(value) {
-        document.getElementById('display').value += value;
-    }
-
-    function calculateResult() {
- let str = document.getElementById('display').value;
-let operatorIndexMais = str.indexOf("+");
-let operatorIndexMenos = str.indexOf("-");
-let operatorIndexVezex = str.indexOf("x");
-let operatorIndexDivicao = str.indexOf("÷");
-
-
-
-
-
-
-
-let num1 = parseInt(str.slice(0, operatorIndexMais).trim()); 
-let num2 = parseInt(str.slice(operatorIndexMais + 0).trim());
-
-
-
-
-if (operatorIndexMais !== -1) {
-
-let soma = num1 + num2
-
-    let str = document.getElementById('display').value += "=" + soma ;
-
-
-}else if (operatorIndexMenos !== -1) {
-    console.log(`${num1 - num2} `);
-
-}else if (operatorIndexVezex !== -1 ){
-    console.log(`${num1 * num2} `)
-
-}else if (operatorIndexDivicao !== -1 ){
-    console.log(`${num1 / num2} `)
-}
-
-
-
-
-
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
         }
 
-function clearDisplay(){
-    let str = document.getElementById('display').value = "";
+        function calculateResult() {
+            let str = document.getElementById('display').value;
+            let operatorIndexMais = str.indexOf("+");
+            let operatorIndexMenos = str.indexOf("-");
+            let operatorIndexVezex = str.indexOf("x");
+            let operatorIndexDivicao = str.indexOf("÷");
 
-}
 
+
+            let num1 = parseInt(str.slice(0, operatorIndexMais).trim());
+            let num2 = parseInt(str.slice(operatorIndexMais + 0).trim());
+
+
+
+
+            if (operatorIndexMais !== -1) {
+
+                let soma = num1 + num2
+
+                let str = document.getElementById('display').value += "=" + soma;
+
+
+            } else if (operatorIndexMenos !== -1) {
+
+
+                let menos = num1 - num2
+
+                let str = document.getElementById('display').value += "=" + menos;
+
+
+
+
+            } else if (operatorIndexVezex !== -1) {
+
+
+                let vezes = num1 * num2
+
+                let str = document.getElementById('display').value += "=" + vezes;
+
+
+
+            } else if (operatorIndexDivicao !== -1) {
+
+                let divicao = num1 / num2
+
+                let str = document.getElementById('display').value += "=" + divicao;
+
+            }
+        }
+        function clearDisplay() {
+            let str = document.getElementById('display').value = "";
+
+        }
     </script>
-
-
 </body>
-
 </html>
 
- 
+
 
 
 
@@ -197,4 +200,3 @@ if (operatorIndexMais === '+') {
   console.log('mais')
 }
 } -->
-
